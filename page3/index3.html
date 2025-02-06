@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="page__main">
+    <div class="buttons">
+        <a href="../page1.html" class="btn btn-bir">Quay lại</a>
+    </div>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Liên Hệ</h2>
+            <form id="contact-form">
+                <label for="name">Tên của bạn:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email của bạn:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Lời nhắn:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Gửi</button>
+            </form>
+            <div id="form-message"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Lê Minh Thư.</p>
+        </div>
+    </footer>
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contact {
+    background-color: #5a3749;
+    padding: 40px 0;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    font-size: 1rem;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    width: 80%;
+    max-width: 600px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    width: 80%;
+    max-width: 600px;
+    padding: 10px;
+    border: none;
+    background-color: #4caf99;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a072;
+}
+
+#form-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #8e28a7;
+}
+
+
+footer {
+    background-color: #cf2d55;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1rem;
+}
+    </style>
+
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    
+    if (name && email && message) {
+        
+        document.getElementById("form-message").innerHTML = "Cảm ơn bạn, " + name + ". Thông tin của bạn đã được gửi đi.";
+        document.getElementById("form-message").style.color = "#28a745";
+    } else {
+        
+        document.getElementById("form-message").innerHTML = "Vui lòng điền đầy đủ thông tin.";
+        document.getElementById("form-message").style.color = "#dc3545";
+    }
+
+    document.getElementById("contact-form").reset();
+});
+
+    </script>
+
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>
